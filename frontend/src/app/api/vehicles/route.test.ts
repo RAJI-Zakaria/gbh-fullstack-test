@@ -1,8 +1,8 @@
-import { VehicleResponse } from "@/types";
+import { VehiclesResponse } from "@/types";
 import { GET } from "./route";
 import { NextRequest } from "next/server";
 
-it("GET: should return array of One vehicle alongside the status 200", async () => {
+it("GET /vehicles: should return array with only one vehicle alongside the status 200", async () => {
   const requestObj = {
     nextUrl: {
       searchParams: new URLSearchParams({ year: "2022" }),
@@ -10,7 +10,7 @@ it("GET: should return array of One vehicle alongside the status 200", async () 
   } as NextRequest;
 
   const response = await GET(requestObj);
-  const body: VehicleResponse = await response.json();
+  const body: VehiclesResponse = await response.json();
 
   expect(response.status).toBe(200);
   expect(body.vehicles.length).toBe(1);

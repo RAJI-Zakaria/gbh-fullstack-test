@@ -33,7 +33,7 @@ export enum FuelType {
   PLUGIN_HYBRID = "PLUGIN_HYBRID",
 }
 
-export interface VehicleResponse {
+export interface VehiclesResponse {
   vehicles: Vehicle[];
   totalPages: number;
 }
