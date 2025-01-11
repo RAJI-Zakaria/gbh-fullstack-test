@@ -1,1 +1,96 @@
-[]
+[
+  {
+    "id": "1",
+    "manufacturer": "BMW",
+    "model": "X5",
+    "year": 2023,
+    "type": "SUV",
+    "price": 60000,
+    "fuelType": "GASOLINE",
+    "transmission": "AUTOMATIC",
+    "mileage": 10000,
+    "features": ["Leather Seats", "Sunroof", "Navigation"],
+    "images": [
+      "https://platform.cstatic-images.com/xlarge/in/v2/color_matched_stock_photos/018761cd-aeb5-4512-a05a-68a43eed07ad/3b3a6906-ce57-427f-a957-5be022286b90.jpg"
+    ],
+    "description": "Powerful and luxurious SUV with advanced technology.",
+    "createdAt": "2024-07-05T10:30:00Z",
+    "updatedAt": "2024-07-05T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "manufacturer": "Tesla",
+    "model": "Model 3",
+    "year": 2022,
+    "type": "ELECTRIC",
+    "price": 45000,
+    "fuelType": "ELECTRIC",
+    "transmission": "AUTOMATIC",
+    "mileage": 15000,
+    "features": ["Autopilot", "Touchscreen Display", "Premium Audio"],
+    "images": [
+      "https://platform.cstatic-images.com/xxlarge/in/v2/stock_photos/38d77a2e-0b51-4357-92d9-5f66661a0f05/252caaa5-213b-40c6-8faf-761ad897e348.png"
+    ],
+    "description": "High-performance electric sedan with advanced technology.",
+    "createdAt": "2024-07-05T10:30:00Z",
+    "updatedAt": "2024-07-05T10:30:00Z"
+  },
+  {
+    "id": "3",
+    "manufacturer": "Toyota",
+    "model": "Camry",
+    "year": 2021,
+    "type": "SEDAN",
+    "price": 25000,
+    "fuelType": "GASOLINE",
+    "transmission": "AUTOMATIC",
+    "mileage": 20000,
+    "features": ["Bluetooth", "Backup Camera", "Keyless Entry"],
+    "images": [
+      "https://platform.cstatic-images.com/xxlarge/in/v2/stock_photos/6f24ee13-2700-4670-9509-813e58b2ef04/51f7e031-96c6-4dc4-a845-b6e8fd0d5ea8.png"
+    ],
+    "description": "Reliable and fuel-efficient sedan with comfortable interior.",
+    "createdAt": "2024-07-05T10:30:00Z",
+    "updatedAt": "2024-07-05T10:30:00Z"
+  },
+  {
+    "id": "4",
+    "manufacturer": "Ford",
+    "model": "F-150",
+    "year": 2020,
+    "type": "TRUCK",
+    "price": 35000,
+    "fuelType": "GASOLINE",
+    "transmission": "AUTOMATIC",
+    "mileage": 30000,
+    "features": ["Towing Package", "4x4", "Bed Liner"],
+    "images": [
+      "https://platform.cstatic-images.com/xxlarge/in/v2/stock_photos/99184752-8d43-4e31-8ae3-87859284ad7b/f0353bf6-e418-4988-bf8f-50bc33929b17.png"
+    ],
+    "description": "Powerful and capable truck for work or play.",
+    "createdAt": "2024-07-05T10:30:00Z",
+    "updatedAt": "2024-07-05T10:30:00Z"
+  },
+  {
+    "id": "5",
+    "manufacturer": "Porsche",
+    "model": "911",
+    "year": 2023,
+    "type": "SPORTS",
+    "price": 120000,
+    "fuelType": "GASOLINE",
+    "transmission": "MANUAL",
+    "mileage": 5000,
+    "features": [
+      "Sport Chrono Package",
+      "Performance Exhaust",
+      "Carbon Fiber Interior"
+    ],
+    "images": [
+      "https://platform.cstatic-images.com/xxlarge/in/v2/stock_photos/0d974de6-24e5-4de9-9088-e26886acd0f5/809c8754-52a6-4fe1-880b-c92f96b92a3c.png"
+    ],
+    "description": "High-performance sports car with exhilarating driving experience.",
+    "createdAt": "2024-07-05T10:30:00Z",
+    "updatedAt": "2024-07-05T10:30:00Z"
+  }
+]
