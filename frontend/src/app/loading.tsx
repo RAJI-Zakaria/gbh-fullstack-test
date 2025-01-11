@@ -14,7 +14,7 @@ const loading = () => {
       </div>
       {/* instead of using suspense we can use the loading.tsx file */}
       {/* <Suspense fallback={<p>Loading...</p>}>
-    <VehicleList vehicles={data.vehicles} />
+    <VehiclesList vehicles={data.vehicles} />
   </Suspense> */}
     </div>
   );

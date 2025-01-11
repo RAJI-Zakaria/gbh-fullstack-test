@@ -1,4 +1,4 @@
 import VehicleCard from "./VehicleCard";
-import VehicleList from "./VehicleList";
+import VehiclesList from "./VehiclesList";
 
-export { VehicleCard, VehicleList };
+export { VehicleCard, VehiclesList };

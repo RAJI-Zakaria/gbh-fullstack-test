@@ -1,4 +1,4 @@
-import { VehicleList } from "@/components";
+import { VehiclesList } from "@/components";
 import { VehiclesResponse } from "@/types";
 import { Suspense } from "react";
 
@@ -17,10 +17,10 @@ const HomePage = async () => {
         Most Affordable Cars
       </h1>
       {/* VEHICLES LIST */}
-      <VehicleList vehicles={data.vehicles} />
+      <VehiclesList vehicles={data.vehicles} />
       {/* instead of using suspense we can use the loading.tsx file */}
       {/* <Suspense fallback={<p>Loading...</p>}>
-        <VehicleList vehicles={data.vehicles} />
+        <VehiclesList vehicles={data.vehicles} />
       </Suspense> */}
     </div>
   );
