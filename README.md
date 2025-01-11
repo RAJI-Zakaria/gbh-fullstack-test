@@ -18,6 +18,11 @@
 8. Scalability considerations
    1. x
 
+## API Tests (ts-jest)
+
+- i am mainly using Jest and insomnia to launch test requests in order to verify if the endpoints are working fine
+  ![JEST Screenshot](./screentshots/jest.png)
+
 # GBH Technical Test
 
 ## Context

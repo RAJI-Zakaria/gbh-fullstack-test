@@ -1,8 +1,8 @@
-import { Vehicle, VehicleResponse } from "@/types";
+import { VehicleResponse } from "@/types";
 import { GET } from "./route";
 import { NextRequest } from "next/server";
 
-it("GET: should return array of 2 vehicles alongside the status 200", async () => {
+it("GET: should return array of One vehicle alongside the status 200", async () => {
   const requestObj = {
     nextUrl: {
       searchParams: new URLSearchParams({ year: "2022" }),
