@@ -26,6 +26,19 @@ export async function GET(request: NextRequest) {
     return true;
   });
 
+  // Get params for Sorting
+  const sortBy = searchParams.get("sortBy");
+
+  filteredVehicles.sort((a, b) => {
+    if (sortBy === "price") {
+      return a.price - b.price;
+    }
+    if (sortBy === "year") {
+      return a.year - b.year;
+    }
+    return 0;
+  });
+
   return NextResponse.json(
     {
       filteredVehicles,
