@@ -1,4 +1,4 @@
-import { VehiclesList } from "@/components";
+import { Hero, VehiclesList } from "@/components";
 import { VehiclesResponse } from "@/types";
 import { Suspense } from "react";
 
@@ -13,6 +13,7 @@ const HomePage = async () => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <div className="space-y-3">
+      <Hero />
       <h1 className="text-3xl uppercase text-center mb-10">
         Most Affordable Cars
       </h1>

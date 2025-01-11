@@ -1,5 +1,10 @@
 // The current page will show the list of vehicles with filters and pagination
-import { Pagination, VehicleFilter, VehiclesList } from "@/components";
+import {
+  LoadingVehiclesList,
+  Pagination,
+  VehicleFilter,
+  VehiclesList,
+} from "@/components";
 import { VehiclesResponse, VehicleQuery } from "@/types";
 import { Suspense } from "react";
 
@@ -30,9 +35,7 @@ export default async function page({ searchParams }: Props) {
   return (
     <>
       <VehicleFilter />
-      <Suspense fallback={<div>Loading vehicles...</div>}>
-        <VehiclesList vehicles={data.vehicles} />
-      </Suspense>
+      <VehiclesList vehicles={data.vehicles} />
       <Pagination totalPages={data.totalPages} />
     </>
   );
