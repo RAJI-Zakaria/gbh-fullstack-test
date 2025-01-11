@@ -17,12 +17,11 @@ export async function GET(request: NextRequest) {
   const filteredVehicles = vehicles.filter((vehicle: Vehicle) => {
     if (
       manufacturer &&
-      vehicle.manufacturer.toLocaleLowerCase() !==
-        manufacturer.toLocaleLowerCase()
+      vehicle.manufacturer.toLowerCase() !== manufacturer.toLowerCase()
     ) {
       return false;
     }
-    if (type && vehicle.type.toLocaleLowerCase() !== type.toLocaleLowerCase()) {
+    if (type && vehicle.type.toLowerCase() !== type.toLowerCase()) {
       return false;
     }
     if (year && vehicle.year !== parseInt(year)) {
@@ -36,10 +35,10 @@ export async function GET(request: NextRequest) {
 
   if (sortBy) {
     filteredVehicles.sort((a, b) => {
-      if (sortBy.toLocaleLowerCase() === "price") {
+      if (sortBy.toLowerCase() === "price") {
         return Number(a.price) - Number(b.price);
       }
-      if (sortBy.toLocaleLowerCase() === "year") {
+      if (sortBy.toLowerCase() === "year") {
         return Number(a.year) - Number(b.year);
       }
       return 0;
