@@ -37,3 +37,11 @@ export interface VehiclesResponse {
   vehicles: Vehicle[];
   totalPages: number;
 }
+
+export interface VehicleQuery {
+  manufacturer?: string;
+  type?: VehicleType;
+  year?: string;
+  sortBy?: "" | "price" | "year";
+  page?: string;
+}
