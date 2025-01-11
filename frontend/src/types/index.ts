@@ -32,3 +32,8 @@ export enum FuelType {
   HYBRID = "HYBRID",
   PLUGIN_HYBRID = "PLUGIN_HYBRID",
 }
+
+export interface VehicleResponse {
+  vehicles: Vehicle[];
+  totalPages: number;
+}
