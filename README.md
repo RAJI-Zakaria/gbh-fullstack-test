@@ -23,6 +23,19 @@
 - i am mainly using Jest and insomnia to launch test requests in order to verify if the endpoints are working fine
   ![JEST Screenshot](./screentshots/jest.png)
 
+## What i've created so far
+
+Backend/API :
+
+- Endpoints
+  - GET `/vehicles` : fetch vehicles based on search params/queries
+    - Filter by : year, manufacturer, type
+    - Sort by : year, price
+  - GET `/vehicles/[id]` : fetch vehicle by id
+- Test
+  - GET `/vehicles`
+  - GET `/vehicles/[id]`
+
 # GBH Technical Test
 
 ## Context
