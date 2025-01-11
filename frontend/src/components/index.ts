@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import LoadingVehiclesList from "./LoadingVehiclesList";
+import VehicleDetails from "./VehicleDetails";
 
 export {
   VehicleCard,
@@ -16,4 +17,5 @@ export {
   Footer,
   Hero,
   LoadingVehiclesList,
+  VehicleDetails,
 };

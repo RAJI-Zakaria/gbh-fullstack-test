@@ -1,6 +1,5 @@
 import { Hero, VehiclesList } from "@/components";
 import { VehiclesResponse } from "@/types";
-import { Suspense } from "react";
 
 const HomePage = async () => {
   const response = await fetch(
@@ -11,6 +10,7 @@ const HomePage = async () => {
 
   // await 2 seconds
   await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return (
     <div className="space-y-3">
       <Hero />
@@ -19,10 +19,6 @@ const HomePage = async () => {
       </h1>
       {/* VEHICLES LIST */}
       <VehiclesList vehicles={data.vehicles} />
-      {/* instead of using suspense we can use the loading.tsx file */}
-      {/* <Suspense fallback={<p>Loading...</p>}>
-        <VehiclesList vehicles={data.vehicles} />
-      </Suspense> */}
     </div>
   );
 };
