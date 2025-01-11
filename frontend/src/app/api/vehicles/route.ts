@@ -39,9 +39,25 @@ export async function GET(request: NextRequest) {
     return 0;
   });
 
+  // Get params for pagination
+  const page = parseInt(searchParams.get("page") || "1");
+  const limit = parseInt(searchParams.get("limit") || "4");
+
+  //calculate the start and end index
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  //Paginate results
+  const paginatedVehicles = filteredVehicles.slice(startIndex, endIndex);
+
+  if (paginatedVehicles.length === 0) {
+    return NextResponse.json({ message: "No vehicles found" }, { status: 404 });
+  }
+
   return NextResponse.json(
     {
-      filteredVehicles,
+      vehicles: paginatedVehicles,
+      totalPages: Math.ceil(filteredVehicles.length / limit),
     },
     { status: 200 }
   );
