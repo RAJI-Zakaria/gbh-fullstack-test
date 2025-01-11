@@ -8,16 +8,21 @@ const vehicles = data as Vehicle[];
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
 
+  // TODO : add validation for all the filter parameters using ZOD or JOI...
   // Getting Filter Parameters
   const manufacturer = searchParams.get("manufacturer");
   const type = searchParams.get("type");
   const year = searchParams.get("year");
 
   const filteredVehicles = vehicles.filter((vehicle: Vehicle) => {
-    if (manufacturer && vehicle.manufacturer !== manufacturer) {
+    if (
+      manufacturer &&
+      vehicle.manufacturer.toLocaleLowerCase() !==
+        manufacturer.toLocaleLowerCase()
+    ) {
       return false;
     }
-    if (type && vehicle.type !== type) {
+    if (type && vehicle.type.toLocaleLowerCase() !== type.toLocaleLowerCase()) {
       return false;
     }
     if (year && vehicle.year !== parseInt(year)) {
@@ -29,15 +34,17 @@ export async function GET(request: NextRequest) {
   // Get params for Sorting
   const sortBy = searchParams.get("sortBy");
 
-  filteredVehicles.sort((a, b) => {
-    if (sortBy === "price") {
-      return a.price - b.price;
-    }
-    if (sortBy === "year") {
-      return a.year - b.year;
-    }
-    return 0;
-  });
+  if (sortBy) {
+    filteredVehicles.sort((a, b) => {
+      if (sortBy.toLocaleLowerCase() === "price") {
+        return Number(a.price) - Number(b.price);
+      }
+      if (sortBy.toLocaleLowerCase() === "year") {
+        return Number(a.year) - Number(b.year);
+      }
+      return 0;
+    });
+  }
 
   // Get params for pagination
   const page = parseInt(searchParams.get("page") || "1");
