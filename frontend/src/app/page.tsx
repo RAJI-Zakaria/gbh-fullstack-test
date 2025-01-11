@@ -9,6 +9,8 @@ const HomePage = async () => {
 
   const data: VehiclesResponse = await response.json();
 
+  // await 2 seconds
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <div className="space-y-3">
       <h1 className="text-3xl uppercase text-center mb-10">
