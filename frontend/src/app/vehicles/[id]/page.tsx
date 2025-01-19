@@ -2,12 +2,9 @@ import { VehicleDetails } from "@/components";
 import { Vehicle } from "@/types";
 import { notFound } from "next/navigation";
 import React from "react";
-interface Props {
-  params: {
-    id: string;
-  };
-}
-const page = async ({ params }: Props) => {
+
+type tParams = Promise<{ id: string }>;
+const page = async ({ params }: { params: tParams }) => {
   const { id } = await params;
   if (isNaN(Number(id))) notFound();
 

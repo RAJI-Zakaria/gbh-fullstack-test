@@ -4,10 +4,8 @@ import { Vehicle } from "@/types";
 
 const vehicles = data as Vehicle[];
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+type tParams = Promise<{ id: string }>;
+export async function GET(req: NextRequest, { params }: { params: tParams }) {
   // Get filter parameters
   const { id } = await params;
 

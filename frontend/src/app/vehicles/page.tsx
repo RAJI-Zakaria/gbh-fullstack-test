@@ -1,20 +1,20 @@
 // The current page will show the list of vehicles with filters and pagination
-import {
-  LoadingVehiclesList,
-  Pagination,
-  VehicleFilter,
-  VehiclesList,
-} from "@/components";
-import { VehiclesResponse, VehicleQuery } from "@/types";
-import { Suspense } from "react";
+import { Pagination, VehicleFilter, VehiclesList } from "@/components";
+import { VehicleQuery, VehiclesResponse } from "@/types";
 
 // Props type is for the query params
 interface Props {
-  searchParams: VehicleQuery;
+  searchParams: Promise<VehicleQuery>;
 }
 
 export default async function page({ searchParams }: Props) {
-  const { manufacturer, type, year, page, sortBy } = await searchParams;
+  const {
+    manufacturer = "all",
+    type = "all",
+    year = "all",
+    page = "1",
+    sortBy = "price",
+  } = await searchParams;
 
   // Construct the query string based on the filters
   const url = new URL("http://localhost:3000/api/vehicles?limit=4");
@@ -28,7 +28,15 @@ export default async function page({ searchParams }: Props) {
   if (sortBy && sortBy.toLowerCase()) url.searchParams.set("sortBy", sortBy);
 
   // Fetch the vehicles data with the query parameters
-  const response = await fetch(url.toString());
+  const response = await fetch(url.toString(), { cache: "no-store" });
+  if (!response.ok) {
+    console.error("Failed to fetch vehicles data:", response.statusText);
+    return (
+      <div>
+        <p>Error fetching vehicles data. Please try again later.</p>
+      </div>
+    );
+  }
 
   const data: VehiclesResponse = await response.json();
 
