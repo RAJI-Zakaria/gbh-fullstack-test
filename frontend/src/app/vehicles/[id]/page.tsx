@@ -7,8 +7,9 @@ type tParams = Promise<{ id: string }>;
 const page = async ({ params }: { params: tParams }) => {
   const { id } = await params;
   if (isNaN(Number(id))) notFound();
+  const BASE_URL = process.env.API_URL || "http://localhost:3000";
 
-  const reponse = await fetch(`http://localhost:3000/api/vehicles/${id}`);
+  const reponse = await fetch(`${BASE_URL}/api/vehicles/${id}`);
   const data = await reponse.json();
   const vehicle: Vehicle = data.vehicle;
 

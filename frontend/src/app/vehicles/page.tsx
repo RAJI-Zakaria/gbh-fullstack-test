@@ -17,7 +17,9 @@ export default async function page({ searchParams }: Props) {
   } = await searchParams;
 
   // Construct the query string based on the filters
-  const url = new URL("http://localhost:3000/api/vehicles?limit=4");
+  const BASE_URL = process.env.API_URL || "http://localhost:3000";
+
+  const url = new URL(`${BASE_URL}/api/vehicles?limit=4`);
 
   // Add search parameters to the URL if they are provided
   if (manufacturer && manufacturer.toLowerCase() != "all")
