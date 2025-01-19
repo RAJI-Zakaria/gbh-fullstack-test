@@ -20,7 +20,7 @@ const HomePage = async () => {
 
   return (
     <div className="space-y-3">
-      {BASE_URL}
+      BASE_URL{BASE_URL}
       <Hero />
       <h1 className="text-3xl uppercase text-center mb-10">
         Most Affordable Cars
