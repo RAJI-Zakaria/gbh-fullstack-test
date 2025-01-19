@@ -17,7 +17,7 @@ const HomePage = async () => {
     // Fallback: Provide default empty data or mock data
     data = { vehicles: [], totalPages: 0 };
   }
-
+  //
   return (
     <div className="space-y-3">
       <Hero />
